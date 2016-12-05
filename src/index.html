@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Hello world</title>
+        <link href="/lib/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <h1>Hello World</h1>
+
+        <script src="/lib/require.js"></script>
+        <script>
+
+            var app = {};
+            require.config({
+                paths: {
+                    underscore: 'lib/underscore-min',
+                    jquery: 'lib/jquery-min',
+                    backbone: 'lib/backbone-min',
+                    application: 'js/application',
+                    router: 'js/router'
+                }
+            });
+
+            require(['application'], function (Application) {
+
+                app.global = new Application();
+
+            });
+
+        </script>
+    </body>
+</html>

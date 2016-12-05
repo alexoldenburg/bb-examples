@@ -1,2 +1,8 @@
+# Ignoring node_modules
+node_modules
+
 # Ignoring JetBrains-files
 .idea
+
+# Ignoring Compiled build
+build
