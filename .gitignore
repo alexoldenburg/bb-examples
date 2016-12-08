@@ -6,3 +6,5 @@ node_modules
 
 # Ignoring Compiled build
 build
+doc
+.sass-cache

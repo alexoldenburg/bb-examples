@@ -1,11 +1,24 @@
-define('router', ['backbone'], function (Backbone) {
+/**
+ * A module representing the application router.
+ * @module router
+ */
+define('router', [ 'backbone' ], function ( Backbone ) {
 
+    'use strict';
+
+    /** returns Backbone.Router, including routes. */
     return Backbone.Router.extend({
 
-        "start": function() {
+        /**
+         *  Kicking off the browsers own history.
+         */
+        start: function() {
             Backbone.history.start();
         },
 
+        /**
+         *  Application routes
+         */
         routes: {
             '': function () {
                 console.log( 'home 1' );
@@ -27,7 +40,5 @@ define('router', ['backbone'], function (Backbone) {
             }
         }
 
-
     });
-
 })

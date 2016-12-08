@@ -1,32 +1,32 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>Hello world</title>
         <link href="/lib/bootstrap.min.css" rel="stylesheet" />
-    </head>
-    <body>
+        <link href="/css/main.css" rel="stylesheet" />
 
-        <h1>Hello World</h1>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="container-fluid">
+
+        <h1><a href="/">BackboneJS Examples</a></h1>
+        <div class="content page-content"></div>
+
 
         <script src="/lib/require.js"></script>
-        <script>
 
-            var app = {};
-            require.config({
-                paths: {
-                    underscore: 'lib/underscore-min',
-                    jquery: 'lib/jquery-min',
-                    backbone: 'lib/backbone-min',
-                    application: 'js/application',
-                    router: 'js/router'
-                }
-            });
+        <%
+        // a bit hacky for requirejsConfig, this way there is no duplicate code
+        print(
+            "<script>" +
+            "   var app = {};" +
 
-            require(['application'], function (Application) {
-
-                app.global = new Application();
-
-            });
-
-        </script>
+            "   require.config(" + JSON.stringify(grunt.config("requirejsConfig")) + ");" +
+            "   require(['application'], function (Application) {" +
+            "       app.global = new Application();" +
+            "});" +
+            "</script>"
+        );
+        %>
     </body>
 </html>
