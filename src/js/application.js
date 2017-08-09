@@ -6,7 +6,6 @@ define('application', [ 'router' ], function ( Router ) {
 
     'use strict';
 
-    console.log('he');
     /**
      *  Kicks off the application.
      */
